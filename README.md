@@ -21,4 +21,4 @@ username, password<br>
 username, first_name, last_name, email, password1, password2, mobile, address, type<br>
 - Logout: <code>localhost:8000/logout</code>
 
-Note: Authentication is required in order to add plants & order plants
+Note: Authentication is mandatory
