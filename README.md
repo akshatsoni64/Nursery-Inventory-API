@@ -1,5 +1,21 @@
 # Nursery-Inventory-API
 Backend Part of Nursery Inventory System, ready to integrate with any frontend application
+
+# Installation Notes:
+- Configure virtual environment(optional)<br>
+<code>virtualenv venv -p python3</code>
+- Activate virtualenv<br>
+<code>source venv/bin/activate</code>
+- Install dependencies from requirements.txt<br>
+<code>pip3 install -r requirements.txt</code>
+- Make empty database named 'nursery'
+- Configure database connection in settings.py
+- Migrate the database<br>
+<code>python3 manage.py migrate</code>
+- Fire up the server<br>
+<code>python3 manage.py runserver</code>
+
+# API Documentation:
 - Available Options: <code>localhost:8000</code><br>
 <i>Check Available APIs</i>
 - Plants: <code>localhost:8000/p</code><br>
