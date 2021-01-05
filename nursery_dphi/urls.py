@@ -19,6 +19,7 @@ from nursery import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.api_details, name="Home"),
     path('p', views.PlantViews.as_view(), name="plant"),
     path('p/<int:id>', views.PlantViews.as_view(), name="view_plant"),
     path('o', views.OrderViews.as_view(), name="order"),

@@ -11,10 +11,23 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator 
+from rest_framework.decorators import api_view
 
-class PlantViews(APIView):
-# class PlantViews(LoginRequiredMixin, APIView):
-    # login_url = '/login'
+@api_view(['GET'])
+def api_details(request):
+    api_urls = {
+        'Available Options(Current)': '/',
+        'Plants List': '/p',
+        'Plant Details': '/p<int:id>',
+        'Orders List': '/o',
+        'Login': '/login',
+        'Register': '/register',
+        'Logout': '/logout'
+    }
+    return Response(api_urls)
+
+class PlantViews(LoginRequiredMixin, APIView):
+    login_url = '/login'
     def get(self, request, id=None):
         if id is not None:
             plant = Plant.objects.get(id = id)
